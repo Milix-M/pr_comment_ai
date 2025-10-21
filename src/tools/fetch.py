@@ -55,8 +55,15 @@ def fetch_ddg_page(url, page_num=0, timeout_sec=10):
             - has_next : bool
                 次のページ番号が存在するかどうか。
     """
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+
     try:
-        response = requests.get(url, timeout=timeout_sec)  # URLからコンテンツを取得
+        response = requests.get(
+            url, timeout=timeout_sec, headers=headers
+        )  # URLからコンテンツを取得
         response.encoding = "utf-8"  # エンコーディングをUTF-8に設定
     except requests.exceptions.Timeout:
         return TIMEOUT_ERROR_DICT
