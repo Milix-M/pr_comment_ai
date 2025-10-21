@@ -9,9 +9,9 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
 
-from common.prompt import CUSTOM_SYSTEM_PROMPT
-from tools.fetch import fetch_ddg_page
-from tools.search import search_ddg
+from src.common.prompt import CUSTOM_SYSTEM_PROMPT
+from src.tools.fetch import fetch_ddg_page
+from src.tools.search import search_ddg
 
 load_dotenv(verbose=True)
 
